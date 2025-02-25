@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
             message: message
         };
 
-        emailjs.send('default_service', 'temtemplate_j3ze682', emailMessage)
+        emailjs.send('default_service', 'template_j3ze682', emailMessage)
             .then(() => {
                 alert('Your message has been sent successfully!');
                 // Optionally, clear form fields after submission
