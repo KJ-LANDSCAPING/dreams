@@ -20,7 +20,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         const emailMessage = {
-            email_id: email,
+            name: name,
+            email: email,
             message: message
         };
 
