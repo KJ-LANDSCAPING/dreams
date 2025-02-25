@@ -1,0 +1,14 @@
+{
+  "name": "contact-form-page",
+  "version": "1.0.0",
+  "description": "A simple contact form page using EmailJS for sending messages.",
+  "main": "src/script.js",
+  "scripts": {
+    "start": "live-server src"
+  },
+  "dependencies": {
+    "emailjs-com": "^3.2.0"
+  },
+  "author": "",
+  "license": "ISC"
+}
