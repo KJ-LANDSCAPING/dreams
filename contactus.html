@@ -37,36 +37,6 @@
     </form>
 </main>
 <!-- JavaScript code -->
-<script type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script>
-    // Initialize EmailJS with your public key
-    emailjs.init('8jKV4SeQdj-p4HfTd'); // Replace with your actual public key
-
-    document.getElementById('contactForm').addEventListener('submit', (event) => {
-        event.preventDefault();
-        
-        const name = document.querySelector('#name').value;
-        const email = document.querySelector('#email').value;
-        const phone = document.querySelector('#phone').value;
-        const message = document.querySelector('#message').value;
-
-        const emailMessage = {
-            email_id: email,
-            message: message
-        };
-
-        emailjs.send('default_service', 'temtemplate_j3ze682', emailMessage)
-            .then(() => {
-                alert('Your message has been sent successfully!');
-                // Reload the page after successful submission
-                window.location.reload();
-            })
-            .catch((error) => {
-                console.error('Error:', error);
-                alert('Error, better luck next time ahh hah!');
-            });
-    });
-</script>
+<script src="script.js"></script>
 </body>
 </html>

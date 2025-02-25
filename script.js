@@ -1,5 +1,10 @@
+import emailjs from 'emailjs-com';
+
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.querySelector('form');
+
+    // Initialize EmailJS with your public key
+    emailjs.init('8jKV4SeQdj-p4HfTd'); // Replace with your actual public key
 
     // Add event listener for form submission
     form.addEventListener('submit', (event) => {
@@ -14,14 +19,24 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        // For demonstration, you can log the data to the console
-        console.log(`Name: ${name}, Email: ${email}, Message: ${message}`);
+        const emailMessage = {
+            email_id: email,
+            message: message
+        };
 
-        // Optionally, clear form fields after submission
-        document.getElementById('name').value = '';
-        document.getElementById('email').value = '';
-        document.getElementById('message').value = '';
-
-        alert('Message received!');
+        emailjs.send('default_service', 'temtemplate_j3ze682', emailMessage)
+            .then(() => {
+                alert('Your message has been sent successfully!');
+                // Optionally, clear form fields after submission
+                document.getElementById('name').value = '';
+                document.getElementById('email').value = '';
+                document.getElementById('message').value = '';
+                // Reload the page after successful submission
+                window.location.reload();
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('Error, better luck next time ahh hah!');
+            });
     });
 });

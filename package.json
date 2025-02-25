@@ -1,0 +1,14 @@
+{
+  "name": "dreams",
+  "version": "1.0.0",
+  "description": "A project to configure a contact form page using EmailJS",
+  "main": "script.js",
+  "scripts": {
+    "start": "node script.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "emailjs-com": "^3.2.0"
+  }
+}
