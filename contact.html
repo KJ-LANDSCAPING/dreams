@@ -14,8 +14,13 @@
             <li><a href="index.html">Home</a></li>
             <li><a href="about.html">About</a></li>
             <li><a href="services.html">Services</a></li>
+<<<<<<< HEAD
             <li><a href="pro-packs.html">Pro-Packs</a></li>
             <li><a href="promotions.html">Promotions</a></li>
+=======
+            <li><a href="products.html">Products</a></li>
+            <li><a href="features.html">Features</a></li>
+>>>>>>> 38b16f8 (Initial commit)
         </ul>
     </nav>
 </header>
@@ -37,6 +42,7 @@
     </form>
 </main>
 <!-- JavaScript code -->
+<<<<<<< HEAD
 <script src="script.js"></script>
 <!-- EmailJS initialization -->
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
@@ -44,6 +50,42 @@
    (function(){
       emailjs.init("8jKV4SeQdj-p4HfTd"); // Replace with your actual public key
    })();
+=======
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+   (function(){
+      emailjs.init({
+        publicKey: "rPFydxxTp7GnYL72d", // Replace with your actual public key
+      });
+   })();
+
+    document.getElementById('contactForm').addEventListener('submit', (event) => {
+        event.preventDefault();
+        
+        const name = document.querySelector('#name').value;
+        const email = document.querySelector('#email').value;
+        const phone = document.querySelector('#phone').value;
+        const message = document.querySelector('#message').value;
+
+        const emailMessage = {
+            from_name: name,
+            from_email: email,
+            phone: phone,
+            message: message
+        };
+
+        emailjs.send('default_service', 'template_contact1', emailMessage)
+            .then(() => {
+                alert('Your message has been sent successfully!');
+                // Reload the page after successful submission
+                window.location.reload();
+            })
+            .catch((error) => {
+                console.error('Error:', error);
+                alert('Error, better luck next time ahh hah!');
+            });
+    });
+>>>>>>> 38b16f8 (Initial commit)
 </script>
 </body>
 </html>
